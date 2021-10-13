@@ -25,8 +25,8 @@ public class PizzaMenu {
   static PizzaMenu pizza5 = new PizzaMenu(5, "Dennis", "Tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano", 65);
   static PizzaMenu pizza6 = new PizzaMenu(6, "Bertil", "Tomatsauce, ost, bacon og oregano", 57);
   static PizzaMenu pizza7 = new PizzaMenu(7, "Silvia", "Tomatsauce, ost, pepperoni, cocktailpølser og oregano", 61);
-  static PizzaMenu pizza8 = new PizzaMenu(8, "Victoria", "Tomatsauce, ost, skinke, ananas, champignon og oregano", 57);
-  static PizzaMenu pizza9 = new PizzaMenu(9, "Vesuvio", "Tomatsauce, ost, skinke og oregano", 57);
+  static PizzaMenu pizza8 = new PizzaMenu(8, "Victoria", "Tomatsauce, ost, skinke, ananas, champignon, løg og oregano", 61);
+  static PizzaMenu pizza9 = new PizzaMenu(9, "Toronfo", "Tomatsauce, ost, skinke, bacon, kebab, chili og oregano", 61);
   static PizzaMenu pizza10 = new PizzaMenu(10, "Vesuvio", "Tomatsauce, ost, skinke og oregano", 57);
   static PizzaMenu pizza11 = new PizzaMenu(11, "Vesuvio", "Tomatsauce, ost, skinke og oregano", 57);
   static PizzaMenu pizza12 = new PizzaMenu(12, "Vesuvio", "Tomatsauce, ost, skinke og oregano", 57);
