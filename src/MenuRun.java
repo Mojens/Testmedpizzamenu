@@ -1,8 +1,9 @@
 public class MenuRun {
 
-public MenuRun(){
+  public MenuRun() {
 
-}
+  }
+
   public static void run() {
     String[] menuItem = new String[10]; //Her laver vi 10 tomme pladser for Strings da Quit skal være på 9 og indeks starter fra 0 skal den være på 10 tomme pladser
 
@@ -50,13 +51,13 @@ public MenuRun(){
           checkChoice = true;
           break;
         case 9:
-          System.out.println("You choosed QUIT"); //Hvis bruger har skrevet 9 vil den sige dette
+          System.out.println("Vi ses igen snart, farvel"); //Hvis bruger har skrevet 9 vil den sige dette
           checkChoice = true;
           break;
 
         default: // alt andet er forkert input
-          System.out.println("\nIt has to be between 1,2,3 or 9");
-          System.out.println("Try again");
+          System.out.println("\nIndtast et gyldigt nummer.");
+          System.out.println("Prøv igen");
           menu.printMenu(); //så skal den printe menuen igen
           choice = menu.readChoice(); //så skal den køre denne metode igen
           checkChoice = false; // her er den så false fordi så betyder det man har tastet et andet integer end 1,2,3 eller 9.

@@ -39,9 +39,9 @@ public class Pizza {
   }
 
   public String toString() {
-    return number + " " +name + " " +
+    return number + " " + name + " " +
         description + "........" +
-        price + "kr."+"\n";
+        price + "kr";
   }
 
   public Pizza(){
