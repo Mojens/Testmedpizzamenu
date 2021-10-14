@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class MenuRun {
 
   public MenuRun() {
@@ -28,11 +26,12 @@ public class MenuRun {
         case 1:
           Pizza.pizzaMenu();
           System.out.println("Registrer ordre nu: "); //Hvis bruger har skrevet 1 vil den sige dette
-          RegisterOrdre.findPizza(0,2);
+          RegisterOrdre.findPizza(0,2,"a");
           checkChoice = true;
           break;
         case 2:
           System.out.println("Se nuværende ordrer"); // Hvis bruger har skrevet 2 vil den sige dette
+          CurrentOrders.current();
           checkChoice = true;
           break;
         case 3:
