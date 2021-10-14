@@ -26,7 +26,7 @@ public class RegisterOrdre {
   public static void timeStamp(int aTimeStamp){
     Scanner input = new Scanner(System.in);
     aTimeStamp = input.nextInt();
-    aTimeStamp = dd
+    aTimeStamp = ddd
 
   }
 
