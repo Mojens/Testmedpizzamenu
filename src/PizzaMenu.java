@@ -36,7 +36,7 @@ public class PizzaMenu {
 
   public static void showMenu() {
       System.out.println(""+pizza1 + pizza2 + pizza3 + pizza4 + pizza5 + pizza6 + pizza7 + pizza8 + pizza9+pizza10
-      +pizza11+pizza12+pizza13+pizza14);
+      +pizza11+pizza12+pizza13+pizza14+pizza15+pizza16+pizza17);
 
   }
 }

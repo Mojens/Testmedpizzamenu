@@ -6,7 +6,7 @@ public MenuRun(){
   public static void run() {
     String[] menuItem = new String[10]; //Her laver vi 10 tomme pladser for Strings da Quit skal være på 9 og indeks starter fra 0 skal den være på 10 tomme pladser
 
-    menuItem[1] = "Registrer ordre"; //Her siger vi hvad hver array indeholder på indek 1
+    menuItem[1] = "Registrer ordre"; //Her siger vi hvad hver array indeholder på indeks 1
     menuItem[2] = "Se nuværende ordrer"; //indeks 2
     menuItem[3] = "Håndtering af ordrer"; //indeks 3
     menuItem[4] = "Omsætning"; //indeks 4
@@ -16,7 +16,6 @@ public MenuRun(){
 
     Menu menu = new Menu("MENU", "Vælg en mulighed: ", menuItem); //Bruger konstruktøren med de 3 parametre
     menu.printMenu();
-
     int choice = menu.readChoice(); //Her laver vi metoden om til en variablen som vi kalder for choice som altså er "input"
     boolean checkChoice; //Denne boolean skal jeg bruge til at lave en do while loop fordi den skal blive ved med at spøge hvis man skriver et andet tal end 1,2,3,9.
     // fordi i readChoice() så tjekker den kun om det en integer der bliver indtastet men ikke om det er den rigtige af dem.
@@ -25,26 +24,29 @@ public MenuRun(){
         case 1:
           PizzaMenu.showMenu();
           System.out.println("Registrer ordre nu: "); //Hvis bruger har skrevet 1 vil den sige dette
+          RegisterOrdre.userInput();
           checkChoice = true;
           break;
         case 2:
-          System.out.println("You choosed 2"); // Hvis bruger har skrevet 2 vil den sige dette
+          System.out.println("Se nuværende ordrer"); // Hvis bruger har skrevet 2 vil den sige dette
           checkChoice = true;
           break;
         case 3:
-          System.out.println("You choosed 3"); // Hvis bruger har skrevet 3 vil den sige dette
+          System.out.println("Håndtering af ordrer"); // Hvis bruger har skrevet 3 vil den sige dette
           checkChoice = true;
           break;
         case 4:
-          System.out.println("");
+          System.out.println("Omsætning");
           checkChoice = true;
           break;
         case 5:
-          System.out.println(" ");
+          System.out.println("Populære ordrer");
           checkChoice = true;
           break;
         case 6:
+          System.out.println("Her er menukortet");
           PizzaMenu.showMenu();
+          run();
           checkChoice = true;
           break;
         case 9:
