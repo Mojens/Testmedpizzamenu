@@ -36,7 +36,7 @@ public class RegisterOrdre {
 
       }
     }
-    aTimeStamp =
+    aTimeStamp=9;
 
   }
 
