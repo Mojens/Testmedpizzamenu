@@ -22,9 +22,9 @@ public MenuRun(){
     do {
       switch (choice) { //Laver en switch som kontroller brugerens input
         case 1:
-          PizzaMenu.showMenu();
+          Pizza.pizzaMenu();
           System.out.println("Registrer ordre nu: "); //Hvis bruger har skrevet 1 vil den sige dette
-          RegisterOrdre.userInput();
+          RegisterOrdre.findPizza(0);
           checkChoice = true;
           break;
         case 2:
@@ -45,7 +45,7 @@ public MenuRun(){
           break;
         case 6:
           System.out.println("Her er menukortet");
-          PizzaMenu.showMenu();
+          Pizza.pizzaMenu();
           run();
           checkChoice = true;
           break;
