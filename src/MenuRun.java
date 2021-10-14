@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MenuRun {
 
   public MenuRun() {
@@ -5,6 +7,7 @@ public class MenuRun {
   }
 
   public static void run() {
+
     String[] menuItem = new String[10]; //Her laver vi 10 tomme pladser for Strings da Quit skal være på 9 og indeks starter fra 0 skal den være på 10 tomme pladser
 
     menuItem[1] = "Registrer ordre"; //Her siger vi hvad hver array indeholder på indeks 1
