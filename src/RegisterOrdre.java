@@ -15,7 +15,7 @@ public class RegisterOrdre {
         RegisterOrdre.orderId = orderId;
     }
 
-    public static int getOderId(int orderId) {
+    public static int getOrderId(int orderId) {
         return orderId;
     }
 
@@ -44,10 +44,9 @@ public class RegisterOrdre {
                     System.out.println("indtast kommentar, ellers tryk enter");
                     com = input.nextLine();
                     System.out.println(find + " " + " " + "Afhentes kl:" + aTimeStamp + " " + "Kommentar: " + com);
-                    System.out.println("Indtast order ID");
-                    orderId = getOderId(input.nextInt());
-                    currentOrders.add("Afhentes kl: "+aTimeStamp + " "+"Kommentar: " + com + " Pizza: "+ find + " " + "OrderID: " +orderId );
 
+                    currentOrders.add("Order ID: "+ count + " Afhentes kl: "+aTimeStamp + " "+"Kommentar: " + com + " Pizza: "+ find);
+                    count++;
                     System.out.println("Den er nu registreret!");
                     System.out.println("Nu kan du se den under “Nuværende ordre“");
                 }

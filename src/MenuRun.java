@@ -35,8 +35,7 @@ public class MenuRun {
           checkChoice = true;
           break;
         case 3:
-          System.out.println("Håndtering af ordrer"); // Hvis bruger har skrevet 3 vil den sige dette
-          CurrentOrders.deleteOrder();
+          runHaendtering();
           checkChoice = true;
           break;
         case 4:
@@ -55,6 +54,7 @@ public class MenuRun {
           break;
         case 9:
           System.out.println("Vi ses igen snart, farvel"); //Hvis bruger har skrevet 9 vil den sige dette
+          System.exit(69);
           checkChoice = true;
           break;
 
@@ -69,6 +69,35 @@ public class MenuRun {
   }
 
   public static void runHaendtering(){
+    String[] menuItem = new String[4];
+    menuItem[1]="Fuldfør ordre";
+    menuItem[2]="Slet ordre";
+    menuItem[3]="Tilbage";
+    Menu menu1 = new Menu("HÅNDTERING AF ORDRER", "Vælg en mulighed: ", menuItem);
+    menu1.printMenu();
+    int choice = menu1.readChoice();
+    boolean checkChoice;
+    do{
+      switch (choice){
+        case 1:
+          CurrentOrders.fufillOrder(0);
+          run();
+          checkChoice = true;
+          break;
+        case 2:
+          CurrentOrders.deleteOrder(0);
+          run();
+          checkChoice = true;
+          break;
+        case 3:
+          run();
+          checkChoice = true;
+          break;
+        default:
+          checkChoice = false;
+      }
+
+    }while(!checkChoice);
 
   }
 }
