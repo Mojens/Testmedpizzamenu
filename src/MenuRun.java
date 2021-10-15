@@ -94,6 +94,10 @@ public class MenuRun {
           checkChoice = true;
           break;
         default:
+          System.out.println("\nIndtast et gyldigt nummer.");
+          System.out.println("Prøv igen");
+          menu1.printMenu(); //så skal den printe menuen igen
+          choice = menu1.readChoice(); //så skal den køre denne metode igen
           checkChoice = false;
       }
 
