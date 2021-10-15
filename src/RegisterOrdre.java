@@ -24,8 +24,6 @@ public class RegisterOrdre {
         Scanner input = new Scanner(System.in);
         aNumber = input.nextInt();
 
-
-
         for (Pizza find : Pizza.pizzaMenu1()) {
             if (find.getNumber() == aNumber) {
                 System.out.println(find);
@@ -41,6 +39,8 @@ public class RegisterOrdre {
                     System.out.println(find + " " + " " + "Afhentes kl:" + aTimeStamp + " " + "Kommentar: " + com);
 
                     currentOrders.add(find + " " + " " + "Afhentes kl:" + aTimeStamp + " " + "Kommentar: " + com);
+                    System.out.println("Den er nu registreret!");
+                    System.out.println("Nu kan du se den under “Nuværende ordre“");
                 }
 
             }
