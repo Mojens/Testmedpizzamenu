@@ -85,7 +85,7 @@ public class MenuRun {
           checkChoice = true;
         }
         case 2 -> {
-          CurrentOrders.deleteOrder(1);
+          CurrentOrders.deleteOrder();
           run();
           checkChoice = true;
         }

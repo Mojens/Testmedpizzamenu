@@ -22,19 +22,20 @@ public class CurrentOrders {
     return null;
   }
 
-  public static String deleteOrder(int ordreID) {
+  public static void deleteOrder() {
     Scanner input = new Scanner(System.in);
-    System.out.println("Hvilken order ID vil du slette?");
-    ordreID = input.nextInt();
-    for (String order: RegisterOrdre.currentOrders) { //Her fejler den
-      String sub = order.substring(order.indexOf("Order ID: ") + 10);
+    System.out.println("Hvilken Order ID vil du slette?");
+    int orderID = input.nextInt();
+    for (String order : RegisterOrdre.currentOrders) {
+      String sub;
+      sub = order.substring(order.indexOf("Order ID: ") + 10);
       sub = sub.substring(0, sub.indexOf(" "));
-      for (Iterator<String> iterator = RegisterOrdre.currentOrders.iterator(); iterator.hasNext();) {
-        String string = iterator.next();
-        if (Integer.parseInt(sub) == ordreID && string.isEmpty()) {
-          iterator.remove();
-        }
+      if (Integer.parseInt(sub) == orderID) {
+        RegisterOrdre.currentOrders.remove(order);
       }
+      while(true) MenuRun.run();
+    }
+  }
       /*if (Integer.parseInt(sub) == ordreID) {
         RegisterOrdre.currentOrders.remove(order);
 
@@ -42,10 +43,7 @@ public class CurrentOrders {
       }
 
        */
-    }
 
-    return null;
-  }
 
 
 
