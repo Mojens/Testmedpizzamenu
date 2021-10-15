@@ -8,8 +8,16 @@ public class RegisterOrdre {
     static String comment;
     static int amount;
     static int timeStamp;
+    static int orderId;
     static ArrayList<String> currentOrders = new ArrayList<>();
 
+    public static void setOderId(int orderId) {
+        RegisterOrdre.orderId = orderId;
+    }
+
+    public static int getOderId(int orderId) {
+        return orderId;
+    }
 
     public RegisterOrdre(int aNumber, int aAmount, int aTimeStamp, String aComment) {
         number = aNumber;
@@ -19,8 +27,7 @@ public class RegisterOrdre {
 
     }
 
-
-    public static void findPizza(int aNumber, int aTimeStamp, String aComment) {
+    public static void findPizza(int aNumber, int aTimeStamp, String aComment, int orderId) {
         Scanner input = new Scanner(System.in);
         aNumber = input.nextInt();
 
@@ -37,14 +44,15 @@ public class RegisterOrdre {
                     System.out.println("indtast kommentar, ellers tryk enter");
                     com = input.nextLine();
                     System.out.println(find + " " + " " + "Afhentes kl:" + aTimeStamp + " " + "Kommentar: " + com);
+                    System.out.println("Indtast order ID");
+                    orderId = getOderId(input.nextInt());
+                    currentOrders.add("Afhentes kl: "+aTimeStamp + " "+"Kommentar: " + com + " Pizza: "+ find + " " + "OrderID: " +orderId );
 
-                    currentOrders.add(find + " " + " " + "Afhentes kl:" + aTimeStamp + " " + "Kommentar: " + com);
                     System.out.println("Den er nu registreret!");
                     System.out.println("Nu kan du se den under “Nuværende ordre“");
                 }
 
             }
-
 
         }
     }

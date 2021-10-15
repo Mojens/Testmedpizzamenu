@@ -26,7 +26,7 @@ public class MenuRun {
         case 1:
           Pizza.pizzaMenu();
           System.out.println("Registrer ordre nu: "); //Hvis bruger har skrevet 1 vil den sige dette
-          RegisterOrdre.findPizza(0,2,"a");
+          RegisterOrdre.findPizza(0,2,"a",2);
           checkChoice = true;
           break;
         case 2:
@@ -36,6 +36,7 @@ public class MenuRun {
           break;
         case 3:
           System.out.println("Håndtering af ordrer"); // Hvis bruger har skrevet 3 vil den sige dette
+          CurrentOrders.deleteOrder();
           checkChoice = true;
           break;
         case 4:
@@ -65,6 +66,10 @@ public class MenuRun {
           checkChoice = false; // her er den så false fordi så betyder det man har tastet et andet integer end 1,2,3 eller 9.
       }
     } while (!checkChoice); //Den skal blive ved med at loop så længe den er false altså en integer som ikke er 1,2,3 eller 9
+  }
+
+  public static void runHaendtering(){
+
   }
 }
 
