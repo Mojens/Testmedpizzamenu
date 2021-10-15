@@ -6,10 +6,10 @@ import java.util.*;
 public class CurrentOrders {
 
   public static String current() {
-    TreeMap<Integer, String> afhentningsTid = new TreeMap<Integer,String>();
+    TreeMap<Integer, String> afhentningsTid = new TreeMap<Integer, String>();
     for (String findAll : RegisterOrdre.currentOrders) {
       String tidspunkt = findAll.substring(findAll.indexOf("Afhentes kl: ") + 13);
-      tidspunkt = tidspunkt.substring(0,tidspunkt.indexOf(" "));
+      tidspunkt = tidspunkt.substring(0, tidspunkt.indexOf(" "));
       int tidspunkter = Integer.parseInt(tidspunkt);
       afhentningsTid.put(tidspunkter, findAll);
     }
@@ -27,32 +27,37 @@ public class CurrentOrders {
     System.out.println("Hvilken Order ID vil du slette?");
     int orderID = input.nextInt();
     for (String order : RegisterOrdre.currentOrders) {
-      String sub;
-      sub = order.substring(order.indexOf("Order ID: ") + 10);
+      String sub = order.substring(order.indexOf("Order ID: ") + 10);
       sub = sub.substring(0, sub.indexOf(" "));
       if (Integer.parseInt(sub) == orderID) {
         RegisterOrdre.currentOrders.remove(order);
+      } else if (Integer.parseInt(sub)!=orderID){
+        System.out.println("Du skal indtaste et gyldigt Order ID!");
+        orderID=input.nextInt();
       }
-      while(true) MenuRun.run();
+      while (true) MenuRun.run();
     }
   }
 
 
-  public static String fufillOrder(int ordreID){
+  public static void fufillOrder(int ordreID) {
     ArrayList<String> fufilledOrders = new ArrayList<>();
     Scanner input = new Scanner(System.in);
     System.out.println("Hvilken order ID vil du fuldføre?");
     ordreID = input.nextInt();
-    for (String order: RegisterOrdre.currentOrders) {
-      String sub = order.substring(order.indexOf("Order ID: ")+10);
-      sub = sub.substring(0,sub.indexOf(" "));
-      if (Integer.parseInt(sub) == ordreID){
+    for (String order : RegisterOrdre.currentOrders) {
+      String sub = order.substring(order.indexOf("Order ID: ") + 10);
+      sub = sub.substring(0, sub.indexOf(" "));
+      if (Integer.parseInt(sub) == ordreID) {
         fufilledOrders.add(order);
         RegisterOrdre.currentOrders.add(order);
       }
 
+      }
     }
-    return null;
   }
+}
 
-  }
+
+
+
