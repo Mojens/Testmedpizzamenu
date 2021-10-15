@@ -6,14 +6,13 @@ import java.util.*;
 public class CurrentOrders {
 
   public static String current() {
-    TreeMap<Integer, String> afhentningsTid = new TreeMap<Integer, String>();
+    TreeMap<Integer, String> afhentningsTid = new TreeMap<Integer,String>();
     for (String findAll : RegisterOrdre.currentOrders) {
       String tidspunkt = findAll.substring(findAll.indexOf("Afhentes kl: ") + 13);
       tidspunkt = tidspunkt.substring(0,tidspunkt.indexOf(" "));
       int tidspunkter = Integer.parseInt(tidspunkt);
       afhentningsTid.put(tidspunkter, findAll);
     }
-
     RegisterOrdre.currentOrders = new ArrayList<>(afhentningsTid.values());
     for (String find : RegisterOrdre.currentOrders) {
       System.out.println(find);
@@ -27,20 +26,32 @@ public class CurrentOrders {
     Scanner input = new Scanner(System.in);
     System.out.println("Hvilken order ID vil du slette?");
     ordreID = input.nextInt();
-    for (String order: RegisterOrdre.currentOrders) {
-      String sub = order.substring(order.indexOf("Order ID: ")+10);
-      sub = sub.substring(0,sub.indexOf(" "));
-      if (Integer.parseInt(sub) == ordreID){
+    for (String order: RegisterOrdre.currentOrders) { //Her fejler den
+      String sub = order.substring(order.indexOf("Order ID: ") + 10);
+      sub = sub.substring(0, sub.indexOf(" "));
+      for (Iterator<String> iterator = RegisterOrdre.currentOrders.iterator(); iterator.hasNext();) {
+        String string = iterator.next();
+        if (Integer.parseInt(sub) == ordreID && string.isEmpty()) {
+          iterator.remove();
+        }
+      }
+      /*if (Integer.parseInt(sub) == ordreID) {
         RegisterOrdre.currentOrders.remove(order);
+
+
       }
 
+       */
     }
+
     return null;
   }
 
-  public static String fufillOrder(int ordreID) {
-    Scanner input = new Scanner(System.in);
+
+
+  public static String fufillOrder(int ordreID){
     ArrayList<String> fufilledOrders = new ArrayList<>();
+    Scanner input = new Scanner(System.in);
     System.out.println("Hvilken order ID vil du fuldføre?");
     ordreID = input.nextInt();
     for (String order: RegisterOrdre.currentOrders) {
@@ -54,5 +65,24 @@ public class CurrentOrders {
     }
     return null;
   }
-}
 
+  }
+
+  /*public static String deleteOrder(int ordreID) {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Hvilken order ID vil du slette?");
+    ordreID = input.nextInt();
+    for (Iterator<String> iterator = Registerordre.currentOrders();) { //Her fejler den
+      String sub = order.substring(order.indexOf("Order ID: ") + 10);
+      sub = sub.substring(0, sub.indexOf(" "));
+
+      if (Integer.parseInt(sub) == ordreID) {
+        RegisterOrdre.currentOrders.remove(order);
+      }
+
+    }
+
+    return null;
+  }
+
+   */

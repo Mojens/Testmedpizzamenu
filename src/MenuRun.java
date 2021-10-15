@@ -23,47 +23,47 @@ public class MenuRun {
     // fordi i readChoice() så tjekker den kun om det en integer der bliver indtastet men ikke om det er den rigtige af dem.
     do {
       switch (choice) { //Laver en switch som kontroller brugerens input
-        case 1:
+        case 1 -> {
           Pizza.pizzaMenu();
           System.out.println("Registrer ordre nu: "); //Hvis bruger har skrevet 1 vil den sige dette
-          RegisterOrdre.findPizza(0,2,"a",2);
+          RegisterOrdre.findPizza(0, 2, "a", 2);
           checkChoice = true;
-          break;
-        case 2:
+        }
+        case 2 -> {
           System.out.println("Se nuværende ordrer"); // Hvis bruger har skrevet 2 vil den sige dette
           CurrentOrders.current();
           checkChoice = true;
-          break;
-        case 3:
+        }
+        case 3 -> {
           runHaendtering();
           checkChoice = true;
-          break;
-        case 4:
+        }
+        case 4 -> {
           System.out.println("Omsætning");
           checkChoice = true;
-          break;
-        case 5:
+        }
+        case 5 -> {
           System.out.println("Populære ordrer");
           checkChoice = true;
-          break;
-        case 6:
+        }
+        case 6 -> {
           System.out.println("Her er menukortet");
           Pizza.pizzaMenu();
           run();
           checkChoice = true;
-          break;
-        case 9:
+        }
+        case 9 -> {
           System.out.println("Vi ses igen snart, farvel"); //Hvis bruger har skrevet 9 vil den sige dette
           System.exit(69);
           checkChoice = true;
-          break;
-
-        default: // alt andet er forkert input
+        }
+        default -> { // alt andet er forkert input
           System.out.println("\nIndtast et gyldigt nummer.");
           System.out.println("Prøv igen");
           menu.printMenu(); //så skal den printe menuen igen
           choice = menu.readChoice(); //så skal den køre denne metode igen
           checkChoice = false; // her er den så false fordi så betyder det man har tastet et andet integer end 1,2,3 eller 9.
+        }
       }
     } while (!checkChoice); //Den skal blive ved med at loop så længe den er false altså en integer som ikke er 1,2,3 eller 9
   }
@@ -78,27 +78,28 @@ public class MenuRun {
     int choice = menu1.readChoice();
     boolean checkChoice;
     do{
-      switch (choice){
-        case 1:
+      switch (choice) {
+        case 1 -> {
           CurrentOrders.fufillOrder(0);
           run();
           checkChoice = true;
-          break;
-        case 2:
-          CurrentOrders.deleteOrder(0);
+        }
+        case 2 -> {
+          CurrentOrders.deleteOrder(1);
           run();
           checkChoice = true;
-          break;
-        case 3:
+        }
+        case 3 -> {
           run();
           checkChoice = true;
-          break;
-        default:
+        }
+        default -> {
           System.out.println("\nIndtast et gyldigt nummer.");
           System.out.println("Prøv igen");
           menu1.printMenu(); //så skal den printe menuen igen
           choice = menu1.readChoice(); //så skal den køre denne metode igen
           checkChoice = false;
+        }
       }
 
     }while(!checkChoice);

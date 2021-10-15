@@ -11,7 +11,7 @@ public class RegisterOrdre {
     static int orderId;
     static ArrayList<String> currentOrders = new ArrayList<>();
 
-    public static void setOderId(int orderId) {
+    public static void setOrderId(int orderId) {
         RegisterOrdre.orderId = orderId;
     }
 
