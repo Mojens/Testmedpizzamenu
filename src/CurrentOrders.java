@@ -36,15 +36,6 @@ public class CurrentOrders {
       while(true) MenuRun.run();
     }
   }
-      /*if (Integer.parseInt(sub) == ordreID) {
-        RegisterOrdre.currentOrders.remove(order);
-
-
-      }
-
-       */
-
-
 
 
   public static String fufillOrder(int ordreID){
@@ -65,22 +56,3 @@ public class CurrentOrders {
   }
 
   }
-
-  /*public static String deleteOrder(int ordreID) {
-    Scanner input = new Scanner(System.in);
-    System.out.println("Hvilken order ID vil du slette?");
-    ordreID = input.nextInt();
-    for (Iterator<String> iterator = Registerordre.currentOrders();) { //Her fejler den
-      String sub = order.substring(order.indexOf("Order ID: ") + 10);
-      sub = sub.substring(0, sub.indexOf(" "));
-
-      if (Integer.parseInt(sub) == ordreID) {
-        RegisterOrdre.currentOrders.remove(order);
-      }
-
-    }
-
-    return null;
-  }
-
-   */
