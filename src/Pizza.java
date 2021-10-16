@@ -4,7 +4,7 @@ public class Pizza {
   String name;
   String description;
   int number;
-  double price;
+  int price;
 
   public void setName(String aName) {
     this.name = aName;
@@ -30,25 +30,25 @@ public class Pizza {
     return number;
   }
 
-  public void setPrice(double aPrice) {
+  public void setPrice(int aPrice) {
     this.price = aPrice;
   }
 
-  public double getPrice() {
+  public int getPrice() {
     return price;
   }
 
   public String toString() {
     return number + " " + name + " " +
-        description + "........" +
-        price + "kr";
+        description + "........" + " DKK "+
+        price;
   }
 
   public Pizza(){
 
   }
 
-  public Pizza(int aNumber, String aName, String aDescription, double aPrice) {
+  public Pizza(int aNumber, String aName, String aDescription, int aPrice) {
     this.name = aName;
     this.description = aDescription;
     this.number = aNumber;

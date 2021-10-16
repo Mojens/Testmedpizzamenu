@@ -4,7 +4,7 @@ import java.awt.List;
 import java.util.*;
 
 public class CurrentOrders {
-
+  static ArrayList<String> fufilledOrders = new ArrayList<>();
   public static String current() {
     TreeMap<Integer, String> afhentningsTid = new TreeMap<Integer,String>();
     for (String findAll : RegisterOrdre.currentOrders) {
@@ -16,7 +16,6 @@ public class CurrentOrders {
     RegisterOrdre.currentOrders = new ArrayList<>(afhentningsTid.values());
     for (String find : RegisterOrdre.currentOrders) {
       System.out.println(find);
-
 
     }
     return null;
@@ -38,8 +37,8 @@ public class CurrentOrders {
   }
 
 
-  public static String fufillOrder(int ordreID){
-    ArrayList<String> fufilledOrders = new ArrayList<>();
+  public static void fufillOrder(int ordreID){
+
     Scanner input = new Scanner(System.in);
     System.out.println("Hvilken order ID vil du fuldføre?");
     ordreID = input.nextInt();
@@ -48,11 +47,12 @@ public class CurrentOrders {
       sub = sub.substring(0,sub.indexOf(" "));
       if (Integer.parseInt(sub) == ordreID){
         fufilledOrders.add(order);
-        RegisterOrdre.currentOrders.add(order);
-      }
+        RegisterOrdre.currentOrders.remove(order);
 
+      }
+      while(true) MenuRun.run();
     }
-    return null;
+
   }
 
   }

@@ -9,6 +9,7 @@ public class RegisterOrdre {
     static int amount;
     static int timeStamp;
     static int orderId;
+    static int count = 1;
     static ArrayList<String> currentOrders = new ArrayList<>();
 
     public static void setOrderId(int orderId) {
@@ -19,15 +20,11 @@ public class RegisterOrdre {
         return orderId;
     }
 
-    public RegisterOrdre(int aNumber, int aAmount, int aTimeStamp, String aComment) {
-        number = aNumber;
-        comment = aComment;
-        amount = aAmount;
-        timeStamp = aTimeStamp;
-
-    }
 
     public static void findPizza(int aNumber, int aTimeStamp, String aComment, int orderId) {
+        number = aNumber;
+        comment = aComment;
+        timeStamp = aTimeStamp;
         Scanner input = new Scanner(System.in);
         aNumber = input.nextInt();
 

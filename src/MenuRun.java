@@ -69,10 +69,11 @@ public class MenuRun {
   }
 
   public static void runHaendtering(){
-    String[] menuItem = new String[4];
+    String[] menuItem = new String[5];
     menuItem[1]="Fuldfør ordre";
     menuItem[2]="Slet ordre";
-    menuItem[3]="Tilbage";
+    menuItem[3]="Se fuldførte ordre";
+    menuItem[4]="Tilbage";
     Menu menu1 = new Menu("HÅNDTERING AF ORDRER", "Vælg en mulighed: ", menuItem);
     menu1.printMenu();
     int choice = menu1.readChoice();
@@ -90,6 +91,11 @@ public class MenuRun {
           checkChoice = true;
         }
         case 3 -> {
+          FufilledOrders.doneOrders();
+          run();
+          checkChoice = true;
+        }
+        case 4 -> {
           run();
           checkChoice = true;
         }
