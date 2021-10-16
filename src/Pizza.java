@@ -40,8 +40,8 @@ public class Pizza {
 
   public String toString() {
     return number + " " + name + " " +
-        description + "........" + " DKK "+
-        price;
+        description + "........" + "DKK "+
+        price + " ";
   }
 
   public Pizza(){

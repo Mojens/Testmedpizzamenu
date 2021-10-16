@@ -40,6 +40,7 @@ public class MenuRun {
         }
         case 4 -> {
           System.out.println("Omsætning");
+          FufilledOrders.revenue();
           checkChoice = true;
         }
         case 5 -> {

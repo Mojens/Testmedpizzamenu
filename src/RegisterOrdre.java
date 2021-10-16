@@ -40,7 +40,7 @@ public class RegisterOrdre {
                     String com;
                     System.out.println("Indtast kommentar, ellers tryk enter");
                     com = input.nextLine();
-                    System.out.println(find + " " + " " + "Afhentes kl:" + aTimeStamp + " " + "Kommentar: " + com);
+                    System.out.println(find + " " + " " + "Afhentes kl: " + aTimeStamp + " " + "Kommentar: " + com);
 
                     currentOrders.add("Order ID: "+ count + " Afhentes kl: "+aTimeStamp + " "+"Kommentar: " + com + " Pizza: "+ find);
                     count++;
