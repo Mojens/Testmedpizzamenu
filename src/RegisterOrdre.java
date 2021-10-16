@@ -38,7 +38,7 @@ public class RegisterOrdre {
                     System.out.println(find + " " + "Afhentes kl:" + aTimeStamp);
                     aComment = input.nextLine();
                     String com;
-                    System.out.println("indtast kommentar, ellers tryk enter");
+                    System.out.println("Indtast kommentar, ellers tryk enter");
                     com = input.nextLine();
                     System.out.println(find + " " + " " + "Afhentes kl:" + aTimeStamp + " " + "Kommentar: " + com);
 
