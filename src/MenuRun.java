@@ -1,7 +1,6 @@
 public class MenuRun {
 
   public MenuRun() {
-
   }
 
   public static void run() {
@@ -40,7 +39,8 @@ public class MenuRun {
         }
         case 4 -> {
           System.out.println("Total omsætning: ");
-          System.out.println(FufilledOrders.revenue());
+          System.out.print(FufilledOrders.revenue());
+          System.out.println(" Kr.");
           checkChoice = true;
         }
         case 5 -> {
