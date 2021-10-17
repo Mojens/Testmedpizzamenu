@@ -30,17 +30,17 @@ public class RegisterOrdre {
 
         for (Pizza find : Pizza.pizzaMenu1()) {
             if (find.getNumber() == aNumber) {
-                System.out.println(find);
+               // System.out.println(find);
                 System.out.println("Indtast afhentnings tidspunkt i 2400 format");
                 aTimeStamp = input.nextInt();
 
                 if (aTimeStamp > 24 && aTimeStamp < 2400) {
-                    System.out.println(find + " " + "Afhentes kl:" + aTimeStamp);
+                    //System.out.println(find + " " + "Afhentes kl:" + aTimeStamp);
                     aComment = input.nextLine();
                     String com;
                     System.out.println("Indtast kommentar, ellers tryk enter");
                     com = input.nextLine();
-                    System.out.println(find + " " + " " + "Afhentes kl: " + aTimeStamp + " " + "Kommentar: " + com);
+                    //System.out.println(find + " " + " " + "Afhentes kl: " + aTimeStamp + " " + "Kommentar: " + com);
 
                     currentOrders.add("Order ID: "+ count + " Afhentes kl: "+aTimeStamp + " "+"Kommentar: " + com + " Pizza: "+ find);
                     count++;

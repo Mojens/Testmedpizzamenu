@@ -39,8 +39,8 @@ public class MenuRun {
           checkChoice = true;
         }
         case 4 -> {
-          System.out.println("Omsætning");
-          FufilledOrders.revenue();
+          System.out.println("Total omsætning: ");
+          System.out.println(FufilledOrders.revenue());
           checkChoice = true;
         }
         case 5 -> {

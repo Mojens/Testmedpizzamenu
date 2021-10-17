@@ -26,8 +26,7 @@ public class CurrentOrders {
     System.out.println("Hvilken Order ID vil du slette?");
     int orderID = input.nextInt();
     for (String order : RegisterOrdre.currentOrders) {
-      String sub;
-      sub = order.substring(order.indexOf("Order ID: ") + 10);
+      String sub = order.substring(order.indexOf("Order ID: ") + 10);
       sub = sub.substring(0, sub.indexOf(" "));
       if (Integer.parseInt(sub) == orderID) {
         RegisterOrdre.currentOrders.remove(order);
