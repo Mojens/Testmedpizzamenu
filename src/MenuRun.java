@@ -45,6 +45,7 @@ public class MenuRun {
         }
         case 5 -> {
           System.out.println("Populære ordrer");
+          FufilledOrders.popularOrder();
           checkChoice = true;
         }
         case 6 -> {

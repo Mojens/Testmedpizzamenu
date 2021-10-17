@@ -34,7 +34,7 @@ public class RegisterOrdre {
                 System.out.println("Indtast afhentnings tidspunkt i 2400 format");
                 aTimeStamp = input.nextInt();
 
-                if (aTimeStamp > 24 && aTimeStamp < 2400) {
+                if (aTimeStamp >= 24 && aTimeStamp <= 2400) {
                     //System.out.println(find + " " + "Afhentes kl:" + aTimeStamp);
                     aComment = input.nextLine();
                     String com;

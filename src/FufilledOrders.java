@@ -23,4 +23,24 @@ public class FufilledOrders {
         return sum;
     }
 
+    public static void popularOrder(){
+        TreeMap<Integer, String> afhentningsTid = new TreeMap<Integer, String>();
+        for (String findAll : CurrentOrders.fufilledOrders) {
+            String pris = findAll.substring(findAll.indexOf("Order ID: ") + 10);
+            pris = pris.substring(0, pris.indexOf(" "));
+            int priser=Integer.parseInt(pris);
+
+            String pizza = findAll.substring(findAll.indexOf("Pizza: ") + 7);
+            pizza = pizza.substring(0, pizza.indexOf(" "));
+            int pizzaer = Integer.parseInt(pizza);
+            afhentningsTid.put(pizzaer+priser, findAll);
+
+        }
+        CurrentOrders.fufilledOrders = new ArrayList<>(afhentningsTid.values());
+        for (String find : CurrentOrders.fufilledOrders) {
+            System.out.println(find);
+
+        }
+    }
+
 }
