@@ -13,7 +13,6 @@ public class FufilledOrders {
     }
 
     public static int revenue() {
-        TreeMap<Integer, String> reve = new TreeMap<Integer, String>();
         int sum = 0;
         for (String findAll : CurrentOrders.fufilledOrders) {
             String dkk = findAll.substring(findAll.indexOf("DKK ") + 4);
@@ -25,16 +24,20 @@ public class FufilledOrders {
     }
 
 
-    public static void popularOrder() {
-        TreeMap<Integer, String> afhentningsTid = new TreeMap<Integer, String>();
-        for (String findAll : CurrentOrders.fufilledOrders) {
+    public static String popularOrder() {
+        TreeMap<Integer, String> sorterEfterPizza = new TreeMap<Integer, String>();
+        for (String findAll : RegisterOrdre.currentOrders) {
             String pizza = findAll.substring(findAll.indexOf("Pizza: ") + 7);
             pizza = pizza.substring(0, pizza.indexOf(" "));
             int pizzaer = Integer.parseInt(pizza);
-            afhentningsTid.put(pizzaer,findAll);
-            System.out.println(afhentningsTid.values());
+            sorterEfterPizza.put(pizzaer, findAll);
+        }
+        RegisterOrdre.currentOrders = new ArrayList<>(sorterEfterPizza.values());
+        for (String find : RegisterOrdre.currentOrders) {
+            System.out.println(find);
 
         }
+        return null;
     }
 }
 
