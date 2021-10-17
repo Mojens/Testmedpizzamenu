@@ -15,7 +15,7 @@ public class MenuRun {
     menuItem[6] = "Se pizza menu";
     menuItem[9] = "QUIT"; //indeks 9
 
-    Menu menu = new Menu("MENU", "Vælg en mulighed: ", menuItem); //Bruger konstruktøren med de 3 parametre
+    Menu menu = new Menu("HOVEDMENU", "Vælg en mulighed: ", menuItem); //Bruger konstruktøren med de 3 parametre
     menu.printMenu();
     int choice = menu.readChoice(); //Her laver vi metoden om til en variablen som vi kalder for choice som altså er "input"
     boolean checkChoice; //Denne boolean skal jeg bruge til at lave en do while loop fordi den skal blive ved med at spøge hvis man skriver et andet tal end 1,2,3,9.
@@ -74,7 +74,7 @@ public class MenuRun {
     menuItem[1]="Fuldfør ordre";
     menuItem[2]="Slet ordre";
     menuItem[3]="Se fuldførte ordre";
-    menuItem[4]="Tilbage";
+    menuItem[4]="Tilbage til hovedmenu";
     Menu menu1 = new Menu("HÅNDTERING AF ORDRER", "Vælg en mulighed: ", menuItem);
     menu1.printMenu();
     int choice = menu1.readChoice();
