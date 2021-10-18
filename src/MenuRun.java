@@ -25,7 +25,7 @@ public class MenuRun {
         case 1 -> {
           Pizza.pizzaMenu();
           System.out.println("Registrer ordre nu: "); //Hvis bruger har skrevet 1 vil den sige dette
-          RegisterOrdre.findPizza(0, 2, "a", 2);
+          RegisterOrdre.registerPizza(0, 2, "a", 2);
           checkChoice = true;
         }
         case 2 -> {

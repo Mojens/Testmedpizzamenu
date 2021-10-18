@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class RegisterOrdre {
     static int number;
     static String comment;
-    static int amount;
+    static int amount = 0;
     static int timeStamp;
     static int orderId;
     static int count = 1;
@@ -21,7 +21,7 @@ public class RegisterOrdre {
     }
 
 
-    public static void findPizza(int aNumber, int aTimeStamp, String aComment, int orderId) {
+    public static void registerPizza(int aNumber, int aTimeStamp, String aComment, int orderId) {
         number = aNumber;
         comment = aComment;
         timeStamp = aTimeStamp;

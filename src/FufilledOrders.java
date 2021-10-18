@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class FufilledOrders {
 
@@ -29,15 +26,22 @@ public class FufilledOrders {
         for (String findAll : CurrentOrders.fufilledOrders) {
             String pizza = findAll.substring(findAll.indexOf("Pizza: ") + 7);
             pizza = pizza.substring(0, pizza.indexOf(" "));
+            String order = findAll.substring(findAll.indexOf("Order ID: ") + 10);
+            order = order.substring(0, order.indexOf(" "));
+            int orders = Integer.parseInt(order);
             int pizzaer = Integer.parseInt(pizza);
-            sorterEfterPizza.put(pizzaer, findAll);
-        }
-        CurrentOrders.fufilledOrders = new ArrayList<>(sorterEfterPizza.values());
-        for (String find : CurrentOrders.fufilledOrders){
-            System.out.println(find);
+            sorterEfterPizza.put(orders+pizzaer, findAll);
 
+            CurrentOrders.fufilledOrders = new ArrayList<>(sorterEfterPizza.values());
+            for (String find : CurrentOrders.fufilledOrders) {
+                System.out.println(find);
+
+
+            }
+            return null;
         }
         return null;
     }
+
 }
 
