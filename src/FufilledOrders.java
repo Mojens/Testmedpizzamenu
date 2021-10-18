@@ -26,14 +26,14 @@ public class FufilledOrders {
 
     public static String popularOrder() {
         TreeMap<Integer, String> sorterEfterPizza = new TreeMap<Integer, String>();
-        for (String findAll : RegisterOrdre.currentOrders) {
+        for (String findAll : CurrentOrders.fufilledOrders) {
             String pizza = findAll.substring(findAll.indexOf("Pizza: ") + 7);
             pizza = pizza.substring(0, pizza.indexOf(" "));
             int pizzaer = Integer.parseInt(pizza);
             sorterEfterPizza.put(pizzaer, findAll);
         }
-        RegisterOrdre.currentOrders = new ArrayList<>(sorterEfterPizza.values());
-        for (String find : RegisterOrdre.currentOrders) {
+        CurrentOrders.fufilledOrders = new ArrayList<>(sorterEfterPizza.values());
+        for (String find : CurrentOrders.fufilledOrders){
             System.out.println(find);
 
         }
